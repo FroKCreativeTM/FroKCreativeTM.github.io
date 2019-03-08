@@ -4,6 +4,9 @@ date: 2019-03-08 21:00:28 -0800
 categories: linux systemProgramming
 ---
 
+### 이 글에서 다룰 내용
+간단하게 리눅스에 대해 알아보고, 시스템 프로그래밍과 Shell script, system call에 대해 알아본다.
+
 # 리눅스?
 
 리눅스는 기본적으로 모든 것이 공개된 오픈 소스이다. 그리고 서버에 많이 사용되던 OS인 Unix와 유사하게 생겼고 호환되며, 오히려 더 강력한 면도 있다.
@@ -17,6 +20,7 @@ categories: linux systemProgramming
 
 C언어의 라이브러리 함수(ex. printf, scanf, putc... etc) 대신 system call(ex. write, read, mkdir ... etc)의 사용을 해서 더 작고 빠른 수행이 가능하며
 더욱 더 유연한 프로그램을 개발하는 것이 가능하다. 단 system call은 OS마다 다 다르며 이 call들을 사용하기 위해서는 해당 OS를 잘 알아야 한다.
+(예로 들어 Windows 환경은 WinApi나 MFC 등을 알아야 활용이 가능하다.)
 
 
 # 리눅스 Shell
