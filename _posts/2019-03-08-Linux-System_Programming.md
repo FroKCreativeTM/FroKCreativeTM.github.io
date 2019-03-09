@@ -9,8 +9,8 @@ categories: linux systemProgramming
 
 # 리눅스?
 
-리눅스는 기본적으로 모든 것이 공개된 오픈 소스이다. 그리고 서버에 많이 사용되던 OS인 Unix와 유사하게 생겼고 호환되며, 오히려 더 강력한 면도 있다.
-그 결과 현재는 서버 시장의 약 70%를 차지하고 있다.
+리눅스는 기본적으로 모든 것이 공개된 오픈 소스이다. 그리고 서버에 많이 사용되던 OS인 Unix와 유사하게 생겼고 호환되며, 오히려 더 강력한 면도
+있기에, 그 결과 현재는 서버 시장의 약 70%를 차지하고 있다.
 [출처 : https://www.zdnet.com/article/linux-foundation-finds-enterprise-linux-growing-at-windows-expense/]
 또한 리눅스는 슈퍼 컴퓨터 시장에서 Unix를 거의 100% 대체하였으며 Android, Tizen, iOS 등의 휴대폰의 OS의 기반이 되었다.
 
