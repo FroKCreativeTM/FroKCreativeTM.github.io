@@ -121,24 +121,24 @@ try~catch문이 있는 함수까지 종료되다가 main함수의 try~catch문�
 
 프로그래머는 함수 내에서 예외 상황이 어떻게 발생할까를 미리 선언을 해둘 수 있다.
 
-  int ThrowFunc(int iNum) throw(int, char)
-  {
-  
-  }
+    int ThrowFunc(int iNum) throw(int, char)
+    {
+      
+    }
   
 이런 식으로 선언하여 int형과 char형의 예외 데이터가 전달될 수 있음을 미리 명시할 수 있다는 것이다.
 그리고 내부에는 위에서 언급했던 방식의 예외처리를 하면 된다.
 
-  int ThrowFunc(int iNum) throw(int, char)
-  {
-      try
+    int ThrowFunc(int iNum) throw(int, char)
     {
-      if(...)
-        throw -1; // int형 예외 데이터
+        try
+      {
+        if(...)
+          throw -1; // int형 예외 데이터
+      }
+      catch(char ch) {...} // char형 예외 데이터를 전달해달라.
+      catch(int expn) {...} // int형 예외 데이터를 전달해달라.
     }
-    catch(char ch) {...} // char형 예외 데이터를 전달해달라.
-    catch(int expn) {...} // int형 예외 데이터를 전달해달라.
-  }
   
 이 때 int, char형 이외의 데이터가 들어온다면, 대비하지 못한 예외 상황에 대한 처리로 terminate 함수가 호출이 되어 프로그램은 종료된다.
 우리가 어떠한 예외도 원하지 않는다면 throw() 이런 식으로 선언하여 예외 상황 발생시 프로그램을 종료하게 된다.
