@@ -33,7 +33,7 @@ categories: C++ Exception Exception_Handling
         }
       	catch (int expn)
       	{
-        	std::cout << "제수는 " << expn << "이 될 수 없습니다." << std::endl;
+        		std::cout << "제수는 " << expn << "이 될 수 없습니다." << std::endl;
        		std::cout << "프로그램을 다시 실행하십시오." << std::endl;
      	}
       	std::cout << "end of main" << std::endl;
