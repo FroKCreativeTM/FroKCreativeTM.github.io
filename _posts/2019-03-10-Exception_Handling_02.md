@@ -104,7 +104,7 @@ try-catch문이 있는 함수까지 종료되다가 main함수의 try-catch문�
 	  	  	throw - 1; // int형 예외 데이터
 	    }
   	  catch (char expn) { ... } // char형 예외 데이터를 전달해달라.
-   }
+  	 }
 
 이런 경우에는 catch로 처리되지 않고 SimpleFunc함수를 호출한 영역으로 전달을 한다.
 그래서 이런 경우 이런 것을 어떻게 처리되는가? try~catch문은 하나의 자료형의 예외처리만을 받지 않는다. 즉 다양한 자료형의 예외처리가 가능한데,
@@ -125,7 +125,7 @@ try-catch문이 있는 함수까지 종료되다가 main함수의 try-catch문�
     int ThrowFunc(int iNum) throw(int, char)
     {
       
-    }
+  	  }
   
 이런 식으로 선언하여 int형과 char형의 예외 데이터가 전달될 수 있음을 미리 명시할 수 있다는 것이다.
 그리고 내부에는 위에서 언급했던 방식의 예외처리를 하면 된다.
@@ -139,7 +139,7 @@ try-catch문이 있는 함수까지 종료되다가 main함수의 try-catch문�
       }
       catch(char ch) {...} // char형 예외 데이터를 전달해달라.
       catch(int expn) {...} // int형 예외 데이터를 전달해달라.
-    }
+  	  }
   
 이 때 int, char형 이외의 데이터가 들어온다면, 대비하지 못한 예외 상황에 대한 처리로 terminate 함수가 호출이 되어 프로그램은 종료된다.
 우리가 어떠한 예외도 원하지 않는다면 throw() 이런 식으로 선언하여 예외 상황 발생시 프로그램을 종료하게 된다.
