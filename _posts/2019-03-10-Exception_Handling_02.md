@@ -11,34 +11,34 @@ categories: C++ Exception Exception_Handling
 
 다음과 같은 코드를 예로 들겠다.
 
-    void Divide(int iParamNum1, int iParamNum2)
-    {
-     if (iParamNum2 == 0)
-       throw iParamNum2;
+	void Divide(int iParamNum1, int iParamNum2)
+	{
+     		if (iParamNum2 == 0)
+       		throw iParamNum2;
   
-     std::cout << "나눗셈의 몫 : " << iParamNum2 / iParamNum2 << std::endl;
-     std::cout << "나눗셈의 나머지 : " << iParamNum1 % iParamNum2 << std::endl;
-    }
+     		std::cout << "나눗셈의 몫 : " << iParamNum2 / iParamNum2 << std::endl;
+     		std::cout << "나눗셈의 나머지 : " << iParamNum1 % iParamNum2 << std::endl;
+    	}
   
-     int main()
-     {
-     	int iNum1, iNum2;
-     	std::cout << "두 개의 숫자를 입력하시오 : ";
-      	std::cin >> iNum1 >> iNum2;
+     	int main()
+     	{
+     		int iNum1, iNum2;
+     		std::cout << "두 개의 숫자를 입력하시오 : ";
+      		std::cin >> iNum1 >> iNum2;
   
-      	try
-      	{
-       		Divide(iNum1, iNum2);
-      		std::cout << "나눗셈을 마쳤습니다." << std::endl;
-        }
-      	catch (int expn)
-      	{
+      		try
+      		{
+       			Divide(iNum1, iNum2);
+      			std::cout << "나눗셈을 마쳤습니다." << std::endl;
+        	}
+      		catch (int expn)
+      		{
         		std::cout << "제수는 " << expn << "이 될 수 없습니다." << std::endl;
-       		std::cout << "프로그램을 다시 실행하십시오." << std::endl;
-     	}
-      	std::cout << "end of main" << std::endl;
+       			std::cout << "프로그램을 다시 실행하십시오." << std::endl;
+     		}
+      		std::cout << "end of main" << std::endl;
   
-      	return 0; 
+      		return 0; 
 	}
  
 예외가 Divide 함수 내에서 발생한다치자. 하지만 발생한 지점, 즉 함수 내에 throw 절을 감싸는 try 블록이 존재하지 않는다.
@@ -48,41 +48,40 @@ categories: C++ Exception Exception_Handling
 
 하지만 여러 개의 함수 즉 main함수 위에 inputInt(), Divide() 이런 식으로 되어있다 치자.
 
-    void Divide(int iParamNum1, int iParamNum2)
-    {
-      if (iParamNum2 == 0)
-        throw iParamNum2;
+    	void Divide(int iParamNum1, int iParamNum2)
+    	{
+      		if (iParamNum2 == 0)
+        		throw iParamNum2;
   
-      std::cout << "나눗셈의 몫 : " << iParamNum2 / iParamNum2 << std::endl;
-     std::cout << "나눗셈의 나머지 : " << iParamNum1 % iParamNum2 << std::endl;
-  	 }
+      		std::cout << "나눗셈의 몫 : " << iParamNum2 / iParamNum2 << std::endl;
+     		std::cout << "나눗셈의 나머지 : " << iParamNum1 % iParamNum2 << std::endl;
+	}
+  	void InputInt()
+     	{
+        	int iNum1, iNum2;
+         	std::cout << "두 개의 숫자를 입력하시오 : ";
+        	std::cin >> iNum1 >> iNum2;
   
-    void InputInt()
-     {
-         int iNum1, iNum2;
-         std::cout << "두 개의 숫자를 입력하시오 : ";
-        std::cin >> iNum1 >> iNum2;
+     		Divide(iNum1, iNum2);
+      		std::cout<< "실행 완료" << std::endl;
+	}
   
-     Divide(iNum1, iNum2);
-      std::cout<< "실행 완료" << std::endl;
-	   }
-  
-     int main()
-     {
-        try
-       {
-          InputInt();
-          std::cout << "나눗셈을 마쳤습니다." << std::endl;
-       }
-        catch (int expn)
-       {
-         std::cout << "제수는 " << expn << "이 될 수 없습니다." << std::endl;
-         std::cout << "프로그램을 다시 실행하십시오." << std::endl;
-       }
-       std::cout << "end of main" << std::endl;
+     	int main()
+     	{
+        	try
+       		{
+          		InputInt();
+          		std::cout << "나눗셈을 마쳤습니다." << std::endl;
+       		}
+        	catch (int expn)
+       		{
+         		std::cout << "제수는 " << expn << "이 될 수 없습니다." << std::endl;
+         		std::cout << "프로그램을 다시 실행하십시오." << std::endl;
+       		}
+       		std::cout << "end of main" << std::endl;
     
-       return 0;
-  	   }
+       		return 0;
+	}
   
 이런 경우 만약 8 0 (예외가 발생될 상황) 을 입력했다고 가정하자. 그럼 InputInt의 나머지 부분을 거치지 않고 main으로 간다.
 
