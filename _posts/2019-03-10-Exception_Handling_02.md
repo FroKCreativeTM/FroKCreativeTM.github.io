@@ -22,24 +22,24 @@ categories: C++ Exception Exception_Handling
   
      int main()
      {
-     int iNum1, iNum2;
-     std::cout << "두 개의 숫자를 입력하시오 : ";
-      std::cin >> iNum1 >> iNum2;
+     	int iNum1, iNum2;
+     	std::cout << "두 개의 숫자를 입력하시오 : ";
+      	std::cin >> iNum1 >> iNum2;
   
-      try
-      {
-       Divide(iNum1, iNum2);
-      std::cout << "나눗셈을 마쳤습니다." << std::endl;
+      	try
+      	{
+       		Divide(iNum1, iNum2);
+      		std::cout << "나눗셈을 마쳤습니다." << std::endl;
         }
-      catch (int expn)
-      {
-        std::cout << "제수는 " << expn << "이 될 수 없습니다." << std::endl;
-       std::cout << "프로그램을 다시 실행하십시오." << std::endl;
-     }
-      std::cout << "end of main" << std::endl;
+      	catch (int expn)
+      	{
+        	std::cout << "제수는 " << expn << "이 될 수 없습니다." << std::endl;
+       		std::cout << "프로그램을 다시 실행하십시오." << std::endl;
+     	}
+      	std::cout << "end of main" << std::endl;
   
-      return 0;
-  	 }
+      	return 0; 
+	}
  
 예외가 Divide 함수 내에서 발생한다치자. 하지만 발생한 지점, 즉 함수 내에 throw 절을 감싸는 try 블록이 존재하지 않는다.
 하지만 그렇다고 해서 함수 내에서 예외처리가 발생하지 않을까? 아니다 메모리 구조상 함수는 스택 메모리에 쌓이고 그 스택 내에 main 그 다음에 
