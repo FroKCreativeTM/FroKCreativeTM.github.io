@@ -48,47 +48,47 @@ categories: C++ Exception Exception_Handling
 
 하지만 여러 개의 함수 즉 main함수 위에 inputInt(), Divide() 이런 식으로 되어있다 치자.
 
-  void Divide(int iParamNum1, int iParamNum2)
-  {
-    if (iParamNum2 == 0)
-      throw iParamNum2;
-
-    std::cout << "나눗셈의 몫 : " << iParamNum2 / iParamNum2 << std::endl;
-    std::cout << "나눗셈의 나머지 : " << iParamNum1 % iParamNum2 << std::endl;
-  }
-
-  void InputInt()
-  {
-    int iNum1, iNum2;
-    std::cout << "두 개의 숫자를 입력하시오 : ";
-    std::cin >> iNum1 >> iNum2;
-
-    Divide(iNum1, iNum2);
-    std::cout<< "실행 완료" << std::endl;
-  }
-
-  int main()
-  {
-    try
+    void Divide(int iParamNum1, int iParamNum2)
     {
-      InputInt();
-      std::cout << "나눗셈을 마쳤습니다." << std::endl;
-    }
-    catch (int expn)
-    {
-      std::cout << "제수는 " << expn << "이 될 수 없습니다." << std::endl;
-      std::cout << "프로그램을 다시 실행하십시오." << std::endl;
-    }
-    std::cout << "end of main" << std::endl;
-
-    return 0;
-  }
+      if (iParamNum2 == 0)
+        throw iParamNum2;
+  
+      std::cout << "나눗셈의 몫 : " << iParamNum2 / iParamNum2 << std::endl;
+     std::cout << "나눗셈의 나머지 : " << iParamNum1 % iParamNum2 << std::endl;
+   }
+  
+    void InputInt()
+   {
+     int iNum1, iNum2;
+     std::cout << "두 개의 숫자를 입력하시오 : ";
+     std::cin >> iNum1 >> iNum2;
+  
+     Divide(iNum1, iNum2);
+      std::cout<< "실행 완료" << std::endl;
+   }
+  
+     int main()
+     {
+        try
+       {
+          InputInt();
+          std::cout << "나눗셈을 마쳤습니다." << std::endl;
+       }
+        catch (int expn)
+       {
+         std::cout << "제수는 " << expn << "이 될 수 없습니다." << std::endl;
+         std::cout << "프로그램을 다시 실행하십시오." << std::endl;
+       }
+       std::cout << "end of main" << std::endl;
+    
+       return 0;
+     }
   
 이런 경우 만약 8 0 (예외가 발생될 상황) 을 입력했다고 가정하자. 그럼 InputInt의 나머지 부분을 거치지 않고 main으로 간다.
 
 그럼 코드가 제대로 실행이 안 된 것 아닌가란 의문을 제기할 수 있지만 스택 메모리는 InputInt를 호출하기 전 상태로 잘 되돌아온다.
 그 이유는 예외 데이터가 나온 함수는 그 시점에서 메모리에서 pop-up되고 그 전 함수가 예외를 처리하지 못한다면 그 함수도 종료되며 pop-up되고 
-try~catch문이 있는 함수까지 종료되다가 main함수의 try~catch문에서 처리 되기 때문이다.
+try-catch문이 있는 함수까지 종료되다가 main함수의 try-catch문에서 처리 되기 때문이다.
 (만약 try~catch문이 main함수에도 없다면 terminate함수(프로그램을 종료시키는 함수)가 호출되면서 프로그램이 종료가 된다.)
 
 #### 자료형이 일치하지 않는 예외 데이터 
