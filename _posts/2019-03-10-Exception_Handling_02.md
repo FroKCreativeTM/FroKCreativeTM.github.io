@@ -56,15 +56,15 @@ categories: C++ Exception Exception_Handling
       		std::cout << "나눗셈의 몫 : " << iParamNum2 / iParamNum2 << std::endl;
      		std::cout << "나눗셈의 나머지 : " << iParamNum1 % iParamNum2 << std::endl;
 	}
-  	void InputInt()
-     	{
-        	int iNum1, iNum2;
-         	std::cout << "두 개의 숫자를 입력하시오 : ";
-        	std::cin >> iNum1 >> iNum2;
-  
-     		Divide(iNum1, iNum2);
+	void InputInt()
+	{
+		int iNum1, iNum2;
+		std::cout << "두 개의 숫자를 입력하시오 : ";
+		std::cin >> iNum1 >> iNum2;
+  		
+		Divide(iNum1, iNum2);
       		std::cout<< "실행 완료" << std::endl;
-	}
+		}
   
      	int main()
      	{
