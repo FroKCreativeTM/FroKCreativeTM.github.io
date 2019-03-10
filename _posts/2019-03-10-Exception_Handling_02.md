@@ -55,7 +55,7 @@ categories: C++ Exception Exception_Handling
   
       std::cout << "나눗셈의 몫 : " << iParamNum2 / iParamNum2 << std::endl;
      std::cout << "나눗셈의 나머지 : " << iParamNum1 % iParamNum2 << std::endl;
-   }
+  	 }
   
     void InputInt()
      {
@@ -65,7 +65,7 @@ categories: C++ Exception Exception_Handling
   
      Divide(iNum1, iNum2);
       std::cout<< "실행 완료" << std::endl;
-   }
+	   }
   
      int main()
      {
@@ -82,7 +82,7 @@ categories: C++ Exception Exception_Handling
        std::cout << "end of main" << std::endl;
     
        return 0;
-     }
+  	   }
   
 이런 경우 만약 8 0 (예외가 발생될 상황) 을 입력했다고 가정하자. 그럼 InputInt의 나머지 부분을 거치지 않고 main으로 간다.
 
