@@ -1,5 +1,5 @@
 ---
-title: "시스템 프로그래밍 2주차 - OT"
+title: "시스템 프로그래밍 2주차 - 운영체제와 "
 date: 2019-03-24 17:40:00 -0800
 categories: linux systemProgramming
 ---
